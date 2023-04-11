@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const controllers_1 = require("../controllers");
+const routes = (0, express_1.Router)();
+routes.get('/historic', controllers_1.LivroController.getHistoricLivro);
+routes.get('/especifico/:uuid', controllers_1.LivroController.getLivro);
+routes.post('/createCall', controllers_1.LivroController.postLivro);
+routes.put('/modify/:uuid', controllers_1.LivroController.putLivro);
+routes.delete('/delete/:uuid', controllers_1.LivroController.deleteLivro);
+exports.default = routes;
